@@ -1,0 +1,15 @@
+.card_box {
+    width: 867px;
+height: 100%px;
+background-color:  #FFFFFF;
+border-radius: 4px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+.title {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 200px;
+    
+}

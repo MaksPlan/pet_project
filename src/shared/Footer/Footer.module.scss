@@ -1,0 +1,42 @@
+
+.main_footer{
+  background-color: #F2F2F2;
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.page_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 120px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex: 0 0 auto;
+}
+.page_h1 {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 16px;
+}
+.container {
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+display: flex;
+flex-direction: row;
+
+}
+
+h3 {
+  color: #424242;
+  padding: 24px;
+
+}

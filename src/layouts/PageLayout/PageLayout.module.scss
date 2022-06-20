@@ -1,0 +1,27 @@
+.page_wrapper {
+  display: flex;
+  // height: 100vh;
+  flex: 0 0 auto;
+  background-color: #E5E5E5;
+}
+
+.section_wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #E5E5E5;
+}
+
+.content_wrapper {
+  padding: 10px;
+  // height: 100vh;
+  background-color: #E5E5E5;
+}
+
+.innerPage_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
