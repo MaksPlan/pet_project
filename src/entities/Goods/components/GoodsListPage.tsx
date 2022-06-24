@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import IGoods from '../../../interfaces/IGoods';
+import SearchInput from '../../../shared/searchInput';
 import GoodsCard from './GoodsCard';
 import style from './goodslistpage.module.scss';
 
@@ -9,6 +10,7 @@ interface IProps {
 const GoodsListPage: FC<IProps> = ({ arr }) => {
   return (
     <div className={style.contaner}>
+      <SearchInput arr={arr} />
       <div className={style.card_box}>
         <p>Название объявления</p>
         <p>Категория</p>

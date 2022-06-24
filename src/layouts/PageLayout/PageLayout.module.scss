@@ -1,8 +1,13 @@
 .page_wrapper {
   display: flex;
+  margin: 0 auto ;
   // height: 100vh;
   flex: 0 0 auto;
   background-color: #E5E5E5;
+}
+.footer {
+  background: #F2F2F2;
+  width: 100%;
 }
 
 .section_wrapper {
@@ -11,17 +16,22 @@
   flex-direction: column;
   margin: 0 auto;
   background-color: #E5E5E5;
+  max-width: 1170px;
 }
 
 .content_wrapper {
-  padding: 10px;
-  // height: 100vh;
+  margin: 10px;
+  position: relative;
   background-color: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  max-width: 867px;
 }
 
 .innerPage_wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
+  // flex-wrap: wrap;
+  // gap: 10px;
+  justify-content: space-between;
 }

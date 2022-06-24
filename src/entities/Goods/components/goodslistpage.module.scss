@@ -6,11 +6,17 @@
 }
 .card_box {
     width: 867px;
-height: 100%px;
+height: 40px;
 background-color:  #FFFFFF;
 border-radius: 4px;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
-padding: 24px;
+margin: 0 40px;
+} 
+.contaner {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

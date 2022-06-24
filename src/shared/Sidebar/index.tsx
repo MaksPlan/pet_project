@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { sidebarConfig } from './sidebarConfig';
 import style from './Sidebar.module.scss';
-import ImgSelector from '../../img/ImgSelector';
+import ImgSelector from '../../../public/img/ImgSelector';
 
 const Sidebar = () => {
   const { pathname } = useLocation();
@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div className={style.sidebar_wrapper}>
       <div className={style.admin}>
-        <ImgSelector id="admin" />
+        <img src="img/admin.svg" alt="" className={style.img} />
         <div className={style.admin_block}>
           <h2>Super admin</h2>
           <h3>Админ-меню</h3>
