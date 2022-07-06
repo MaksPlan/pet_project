@@ -1,0 +1,29 @@
+.wrapper {
+    width: 867px;
+display: flex;
+flex-direction: column;
+gap: 24px;
+background: #FFFFFF;
+ .container {
+    padding: 24px;
+ }
+}
+.input_big {
+    width: 819px;
+height: 64px;
+background: rgba(42, 47, 55, 0.02);
+border: 1px solid rgba(42, 47, 55, 0.08);
+border-radius: 4px;
+}
+.input_medium {
+    width: 397px;
+height: 64px;
+background: rgba(42, 47, 55, 0.02);
+border: 1px solid rgba(42, 47, 55, 0.08);
+border-radius: 4px;
+}
+.select {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}

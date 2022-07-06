@@ -4,7 +4,8 @@
   margin: 0 auto;
   align-items: center;
   width: 100%;
-  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: 102.56px 101px 182px;
 }
 
 .page_footer {
@@ -22,7 +23,7 @@
   height: 18px;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
+  margin-right: 48px;
 }
 .page_h1 {
 font-family: 'Montserrat';

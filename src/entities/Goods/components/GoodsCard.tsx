@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Kebab from '../../../shared/Kebab/Kebab';
 import style from './goodscard.module.scss';
 
 interface IProps {
@@ -15,6 +16,7 @@ const GoodsCard: FC<IProps> = ({ title, date, category }) => {
       </p>
       <p>{category}</p>
       <p>{date}</p>
+      <Kebab />
     </div>
   );
 };
