@@ -1,32 +1,34 @@
 .container {
-width: 242px;
-height: 136px;
-display: flex;
-flex-direction: column;
-z-index: 99; 
-position: absolute; 
-float: left;  
-text-align: center; 
-list-style: none;  
-display: block;
-flex-wrap: wrap;
- li {
-    background-color: #444444;
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    z-index: 6;
     width: 242px;
-height: 40px;
- button {
-    width: 20px;
-    height: 20px;
+    // height: 150px;
+    background: #ffffff;
+    border: 1px solid rgba(44, 45, 46, 0.08);
+    right: 25px;
+    top: 49px;
+    margin: 0;
+    padding: 0 auto 0 24px;
+ li {
+    border: 0;
+    display: flex;
+    width: 100%;
+    background: #ffffff;
+    display: inline-flex;
+    flex-direction: row;
     p {
         font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
 line-height: 24px;
+margin: 0;
     }
  }
+ li:hover {
+    background: rgba(44, 45, 46, 0.08);
+ }
+ 
 
     .kebab_img {
         background-color: transparent;
@@ -36,4 +38,4 @@ line-height: 24px;
       border: none;
      }
  }
-}
+

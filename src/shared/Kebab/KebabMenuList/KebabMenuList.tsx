@@ -6,22 +6,20 @@ const KebabMenuList = () => {
   return (
     <ul className={style.container}>
       <li>
-        <button type="button">
-          <img src="icons/eye.svg" alt="" className={style.kebab_img} />
-          <Link to="/edit">Просмотреть</Link>
-        </button>
+        <img src="icons/eye.svg" alt="" className={style.kebab_img} />
+        <Link to="/edit" style={{ textDecoration: 'none' }}>
+          Просмотреть
+        </Link>
       </li>
       <li>
-        <button type="button">
-          <img src="icons/pencil.svg" alt="" className={style.kebab_img} />
-          <p>Редактировать</p>
-        </button>
+        <img src="icons/pencil.svg" alt="" className={style.kebab_img} />
+        <Link to="/edit" style={{ textDecoration: 'none' }}>
+          Редактировать
+        </Link>
       </li>
       <li>
-        <button type="button">
-          <img src="icons/trach.svg" alt="" className={style.kebab_img} />
-          <p>Удалить</p>
-        </button>
+        <img src="icons/trash.svg" alt="" className={style.kebab_img} />
+        <p>Удалить</p>
       </li>
     </ul>
   );

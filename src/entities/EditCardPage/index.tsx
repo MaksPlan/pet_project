@@ -1,12 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import style from './editcardspage.module.scss';
 
 const EditCardPage = () => {
+  const dipatch = useDispatch();
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
         <div className={style.input_big}>
-          <input type="text" className={style.input_big} />
+          <input
+            type="text"
+            className={style.input_big}
+            onChange={(e) => dipatch({ type: 'EditCard', payload.title: e.target.value })}
+          />
         </div>
         <div className={style.select}>
           <select name="categories" id="" className={style.input_medium}>
