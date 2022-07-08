@@ -18,7 +18,13 @@ const GoodsListPage: FC<IProps> = ({ arr }) => {
       </div>
       <div className={style.page_cards}>
         {arr.map((stuff) => {
-          return <GoodsCard title={stuff.title} date={stuff.date} category={stuff.category} />;
+          return (
+            <GoodsCard
+              title={stuff.title || ''}
+              date={stuff.date || '20 april 2022'}
+              category={stuff.category || ''}
+            />
+          );
         })}
       </div>
     </div>

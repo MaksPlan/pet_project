@@ -11,12 +11,15 @@ const EditCardPage = () => {
           <input
             type="text"
             className={style.input_big}
-            onChange={(e) => dipatch({ type: 'EditCard', payload.title: e.target.value })}
+            onChange={(e) => dipatch({ type: 'EditCard', payload: { title: e.target.value } })}
           />
         </div>
         <div className={style.select}>
-          <select name="categories" id="" className={style.input_medium}>
-            <option value="clothes">clothes</option>
+          <select
+            name="categories"
+            id=""
+            className={style.input_medium}
+            onChange={(e) => dipatch({ type: 'EditCard', payload: { category: e.target.value } })}>
             <option value="tech">tech</option>
             <option value="jewelry">jewelry</option>
           </select>
@@ -28,13 +31,25 @@ const EditCardPage = () => {
             value="+7 (___) ___-____"
             data-mask="+7 (___) ___-____"
             className={style.input_medium}
+            onChange={(e) => dipatch({ type: 'EditCard', payload: { tel: e.target.value } })}
           />
         </div>
         <div>
-          <input type="text" className={style.input_big} value="Введите текст (до 3000 символов)" />
+          <input
+            type="text"
+            className={style.input_big}
+            value="Введите текст (до 3000 символов)"
+            onChange={(e) =>
+              dipatch({ type: 'EditCard', payload: { description: e.target.value } })
+            }
+          />
         </div>
         <div>
-          <input type="file" className={style.input_big} />
+          <input
+            type="file"
+            className={style.input_big}
+            onChange={(e) => dipatch({ type: 'EditCard', payload: { file: e.target.value } })}
+          />
         </div>
       </div>
     </div>

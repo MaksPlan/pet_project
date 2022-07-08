@@ -2,13 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import IGoods from '../interfaces/IGoods';
 import Goods from '../mocks/mockedGoods';
 
-const initialState: IGoods = {};
+const initialState: IGoods[] = [];
 
-const reducer = (state = initialState, action: any, payload?: IGoods) => {
+export const reducer = (state = initialState, action: any, payload?: IGoods, i?: number) => {
+  let card = {};
   switch (action.type) {
     case 'EditCard':
-      return {
-        ...state,
+      card = {
         id: payload?.id || null,
         titile: payload?.title || null,
         price: payload?.price || null,
@@ -16,22 +16,13 @@ const reducer = (state = initialState, action: any, payload?: IGoods) => {
         description: payload?.date || null,
         date: '20 april 2022',
       };
-    case 'ViewCards':
-      return {
-        ...state,
-        id: payload?.id,
-        titile: payload?.title,
-        price: payload?.price,
-        category: payload?.category,
-        description: payload?.date,
-        date: '20 april 2022',
-      };
+      return [...state, card];
+    // case 'ViewCards':
+    //   return state.[i]
     default:
       // eslint-disable-next-line consistent-return
       return state;
   }
 };
 
-export const store = configureStore(
-  {reducer: reducer}
-);
+export const store = configureStore({ reducer });

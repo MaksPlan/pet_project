@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import './assets/scss/normalize.scss';
 import EditCardPage from './entities/EditCardPage';
@@ -7,14 +8,17 @@ import GoodsPage from './entities/Goods/GoodsPage';
 // import UsersPage from './entities/UsersPage';
 // import UserComponent from './entities/UsersPage/components/UserComponent';
 import PageLayout from './layouts/PageLayout';
+import { store } from './store/reducer';
 
 const App = () => {
   return (
     <PageLayout>
-      <Routes>
-        <Route path="/" element={<GoodsPage />} />
-        <Route path="/edit" element={<EditCardPage />} />
-      </Routes>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<GoodsPage />} />
+          <Route path="/edit" element={<EditCardPage />} />
+        </Routes>
+      </Provider>
     </PageLayout>
   );
 };

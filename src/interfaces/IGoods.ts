@@ -5,6 +5,8 @@ interface IGoods {
   category?: string | null;
   description?: string | null;
   date?: string | null;
+  tel?: string | null;
+  file?: any;
 }
 
 export default IGoods;
