@@ -11,6 +11,9 @@ const EditCardPage = () => {
           <input
             type="text"
             className={style.input_big}
+            // лучше вынести в хэндлер перед return
+            // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {...}
+            // и передавать уже его в onChange
             onChange={(e) => dipatch({ type: 'EditCard', payload: { title: e.target.value } })}
           />
         </div>

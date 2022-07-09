@@ -1,29 +1,31 @@
 .wrapper {
-    width: 867px;
-display: flex;
-flex-direction: column;
-gap: 24px;
-background: #FFFFFF;
- .container {
+  width: 867px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #ffffff;
+  .container {
     padding: 24px;
- }
+  }
 }
+// у тебя как будто не отрабатывает prettier
+// посмотри, как отступы изменились после того, как я сохранил этот файл
 .input_big {
-    width: 819px;
-height: 64px;
-background: rgba(42, 47, 55, 0.02);
-border: 1px solid rgba(42, 47, 55, 0.08);
-border-radius: 4px;
+  width: 819px;
+  height: 64px;
+  background: rgba(42, 47, 55, 0.02);
+  border: 1px solid rgba(42, 47, 55, 0.08);
+  border-radius: 4px;
 }
 .input_medium {
-    width: 397px;
-height: 64px;
-background: rgba(42, 47, 55, 0.02);
-border: 1px solid rgba(42, 47, 55, 0.08);
-border-radius: 4px;
+  width: 397px;
+  height: 64px;
+  background: rgba(42, 47, 55, 0.02);
+  border: 1px solid rgba(42, 47, 55, 0.08);
+  border-radius: 4px;
 }
 .select {
- display: flex;
- flex-direction: row;
- justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
