@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './assets/scss/normalize.scss';
 import EditCardPage from './entities/EditCardPage';
 import GoodsPage from './entities/Goods/GoodsPage';
+import ViewCardPage from './entities/ViewCardPage';
 // import TestPage from './entities/TestPage';
 // import UsersPage from './entities/UsersPage';
 // import UserComponent from './entities/UsersPage/components/UserComponent';
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<GoodsPage />} />
           <Route path="/edit" element={<EditCardPage />} />
+          <Route path="/view" element={<ViewCardPage />} />
         </Routes>
       </Provider>
     </PageLayout>

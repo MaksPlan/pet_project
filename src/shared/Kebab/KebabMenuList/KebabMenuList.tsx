@@ -7,7 +7,7 @@ const KebabMenuList = () => {
     <ul className={style.container}>
       <li>
         <img src="icons/eye.svg" alt="" className={style.kebab_img} />
-        <Link to="/edit" style={{ textDecoration: 'none' }}>
+        <Link to="/view" style={{ textDecoration: 'none' }}>
           Просмотреть
         </Link>
       </li>

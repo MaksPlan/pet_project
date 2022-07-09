@@ -4,6 +4,11 @@ import style from './editcardspage.module.scss';
 
 const EditCardPage = () => {
   const dipatch = useDispatch();
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dipatch({ type: 'EditCard', payload: { title: e.target.value } });
+
+    console.log(e.target.value);
+  };
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
@@ -11,7 +16,10 @@ const EditCardPage = () => {
           <input
             type="text"
             className={style.input_big}
-            onChange={(e) => dipatch({ type: 'EditCard', payload: { title: e.target.value } })}
+            // лучше вынести в хэндлер перед return
+            // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {...}
+            // и передавать уже его в onChange
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div className={style.select}>

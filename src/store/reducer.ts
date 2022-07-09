@@ -4,6 +4,7 @@ import Goods from '../mocks/mockedGoods';
 
 const initialState: IGoods[] = [];
 
+// Несемантичное название редьюсера, это как переменную назвать Variable или Data, а компонент - Component
 export const reducer = (state = initialState, action: any, payload?: IGoods, i?: number) => {
   let card = {};
   switch (action.type) {
@@ -20,7 +21,6 @@ export const reducer = (state = initialState, action: any, payload?: IGoods, i?:
     // case 'ViewCards':
     //   return state.[i]
     default:
-      // eslint-disable-next-line consistent-return
       return state;
   }
 };
