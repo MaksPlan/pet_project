@@ -23,6 +23,7 @@ const GoodsListPage: FC<IProps> = ({ arr }) => {
               title={stuff.title || ''}
               date={stuff.date || '20 april 2022'}
               category={stuff.category || ''}
+              id={stuff.id || 100}
             />
           );
         })}

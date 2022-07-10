@@ -1,7 +1,20 @@
-import React from 'react';
+import { request } from 'http';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import IGoods from '../../interfaces/IGoods';
+import { getState } from '../../store/selector';
 import style from './viewcardspage.module.scss';
 
 const ViewCardPage = () => {
+  const { id } = useParams();
+  const [card, setCard] = useState<IGoods[] | null>(null);
+  const requestRedux = useSelector(getState());
+  console.log(id);
+  useEffect(() => {
+    setCard(requestRedux);
+    console.log(card);
+  }, []);
   return (
     <div className={style.wrapper}>
       <div className={style.container}>

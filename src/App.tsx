@@ -17,8 +17,8 @@ const App = () => {
       <Provider store={store}>
         <Routes>
           <Route path="/" element={<GoodsPage />} />
-          <Route path="/edit" element={<EditCardPage />} />
-          <Route path="/view" element={<ViewCardPage />} />
+          <Route path="/edit/:id" element={<EditCardPage />} />
+          <Route path="/view/:id" element={<ViewCardPage />} />
         </Routes>
       </Provider>
     </PageLayout>

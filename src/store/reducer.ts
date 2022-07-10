@@ -2,27 +2,29 @@ import { configureStore } from '@reduxjs/toolkit';
 import IGoods from '../interfaces/IGoods';
 import Goods from '../mocks/mockedGoods';
 
-const initialState: IGoods[] = [];
+const initialState: IGoods[] = Goods;
 
 // Несемантичное название редьюсера, это как переменную назвать Variable или Data, а компонент - Component
-export const reducer = (state = initialState, action: any, payload?: IGoods, i?: number) => {
+export const reducerGlobal = (state = initialState, action: any, payload?: IGoods) => {
   let card = {};
   switch (action.type) {
     case 'EditCard':
       card = {
-        id: payload?.id || null,
-        titile: payload?.title || null,
-        price: payload?.price || null,
-        category: payload?.category || null,
-        description: payload?.date || null,
+        id: payload?.id,
+        titile: payload?.title,
+        price: payload?.price,
+        category: payload?.category,
+        description: payload?.date,
         date: '20 april 2022',
       };
       return [...state, card];
-    // case 'ViewCards':
-    //   return state.[i]
+    case 'ViewCard':
+      return state;
     default:
       return state;
   }
 };
 
-export const store = configureStore({ reducer });
+export const store = configureStore({
+  reducer: reducerGlobal,
+});

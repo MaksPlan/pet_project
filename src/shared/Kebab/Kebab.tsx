@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import style from './kebab.module.scss';
 import KebabMenuList from './KebabMenuList/KebabMenuList';
 
@@ -9,7 +9,11 @@ import KebabMenuList from './KebabMenuList/KebabMenuList';
 // (setState((state)=> !state))
 // Ну и еще первый раз слышу про то, что такая реализация менюшки всплывающей
 // называется кебаб)))))
-const Kebab = () => {
+interface IProps {
+  id: number;
+}
+
+const Kebab: FC<IProps> = ({ id }) => {
   const [kebabState, setKebabState] = useState(false);
   // const [menuArr, setMenuArr] = useState([]);
   function showKebab() {
@@ -18,7 +22,7 @@ const Kebab = () => {
 
   return (
     <button type="button" className={style.kebab_img} onClick={() => showKebab()}>
-      <div className={style.palce_kebab}>{kebabState ? <KebabMenuList /> : false} </div>
+      <div className={style.palce_kebab}>{kebabState ? <KebabMenuList id={id} /> : false} </div>
 
       <img src="icons/dots.svg" alt="" />
     </button>
