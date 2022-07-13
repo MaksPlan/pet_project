@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import style from './kebabmenulist.module.scss';
 
@@ -7,6 +8,10 @@ interface IProps {
 }
 
 const KebabMenuList: FC<IProps> = ({ id }) => {
+  const dispatch = useDispatch();
+  function removeCard() {
+    dispatch({ type: 'DELETE_CARD', payload: id });
+  }
   return (
     <ul className={style.container}>
       <li>
@@ -23,7 +28,9 @@ const KebabMenuList: FC<IProps> = ({ id }) => {
       </li>
       <li>
         <img src="icons/trash.svg" alt="" className={style.kebab_img} />
-        <p>Удалить</p>
+        <button type="button" onClick={() => removeCard()}>
+          Удалить
+        </button>
       </li>
     </ul>
   );

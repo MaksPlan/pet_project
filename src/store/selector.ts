@@ -1,3 +1,3 @@
-import IGoods from '../interfaces/IGoods';
+import { IGoodsState } from './interface';
 
-export const getState = (state: IGoods[]) => state;
+export const getGoodsSelector = (state: IGoodsState) => state.goods;
