@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ActionType, createAction } from '../../../util/actionCreater';
 import style from './kebabmenulist.module.scss';
 
 interface IProps {
@@ -10,7 +11,7 @@ interface IProps {
 const KebabMenuList: FC<IProps> = ({ id }) => {
   const dispatch = useDispatch();
   function removeCard() {
-    dispatch({ type: 'DELETE_CARD', payload: id });
+    dispatch(createAction(ActionType.DELETE_CARD, id));
   }
   return (
     <ul className={style.container}>

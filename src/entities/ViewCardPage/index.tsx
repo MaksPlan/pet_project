@@ -3,18 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import IGoods from '../../interfaces/IGoods';
+import Goods from '../../mocks/mockedGoods';
 import { getGoodsSelector } from '../../store/selector';
 import style from './viewcardspage.module.scss';
 
 const ViewCardPage = () => {
-  const { id } = useParams();
-  const [card, setCard] = useState<IGoods[] | null>(null);
-  const goodsList = useSelector(getGoodsSelector);
-  console.log(id);
-  useEffect(() => {
-    setCard(goodsList);
-    console.log(card);
-  }, [goodsList]);
+  // const { id } = useParams();
+  // const [card, setCard] = useState<IGoods[] | null>(null);
+  // const goodsList = useSelector(getGoodsSelector);
+  // console.log(id);
+  // useEffect(() => {
+  //   setCard(goodsList);
+  //   console.log(card);
+  // }, [goodsList]);
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
