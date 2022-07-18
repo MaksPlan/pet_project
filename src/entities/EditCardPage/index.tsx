@@ -1,13 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import IGoods from '../../interfaces/IGoods';
+import { ActionType } from '../../util/actionCreater';
 import style from './editcardspage.module.scss';
 
 const EditCardPage = () => {
-  const dipatch = useDispatch();
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dipatch({ type: 'EditCard', payload: { title: e.target.value } });
-
-    console.log(e.target.value);
+  const dispatch = useDispatch();
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement> // | ChangeEvent<HTMLSelectElement>
+  ): IGoods => {
+    const goodCard = {};
+    return goodCard;
   };
   return (
     <div className={style.wrapper}>
@@ -23,11 +26,7 @@ const EditCardPage = () => {
           />
         </div>
         <div className={style.select}>
-          <select
-            name="categories"
-            id=""
-            className={style.input_medium}
-            onChange={(e) => dipatch({ type: 'EditCard', payload: { category: e.target.value } })}>
+          <select name="categories" id="" className={style.input_medium}>
             <option value="tech">tech</option>
             <option value="jewelry">jewelry</option>
           </select>
@@ -39,7 +38,7 @@ const EditCardPage = () => {
             value="+7 (___) ___-____"
             data-mask="+7 (___) ___-____"
             className={style.input_medium}
-            onChange={(e) => dipatch({ type: 'EditCard', payload: { tel: e.target.value } })}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div>
@@ -47,17 +46,11 @@ const EditCardPage = () => {
             type="text"
             className={style.input_big}
             value="Введите текст (до 3000 символов)"
-            onChange={(e) =>
-              dipatch({ type: 'EditCard', payload: { description: e.target.value } })
-            }
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div>
-          <input
-            type="file"
-            className={style.input_big}
-            onChange={(e) => dipatch({ type: 'EditCard', payload: { file: e.target.value } })}
-          />
+          <input type="file" className={style.input_big} onChange={(e) => handleInputChange(e)} />
         </div>
       </div>
     </div>

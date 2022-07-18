@@ -13,7 +13,7 @@ export const reducerGlobal = (
 ): IGoodsState => {
   switch (action.type) {
     case ActionType.EDIT_CARD:
-      return { ...state, goods: [...state.goods, action.payload] };
+      return { ...state, goods: action.payload };
     case ActionType.VIEW_CARD:
       return state;
     case ActionType.DELETE_CARD:
