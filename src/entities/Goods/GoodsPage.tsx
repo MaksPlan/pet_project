@@ -1,3 +1,4 @@
+import Spin from 'antd/lib/spin';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import IGoods from '../../interfaces/IGoods';
@@ -30,7 +31,7 @@ const GoodsPage = () => {
   }, []);
 
   if (!goodsListArray) {
-    return <div>Loading</div>;
+    return <Spin />;
   }
   return <GoodsListPage arr={goodsListArray} />;
 };

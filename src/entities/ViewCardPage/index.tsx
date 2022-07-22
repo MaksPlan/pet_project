@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import IGoods from '../../interfaces/IGoods';
@@ -7,17 +7,21 @@ import style from './viewcardspage.module.scss';
 
 const ViewCardPage = () => {
   const { id } = useParams();
+  const [viewState, setViewState] = useState<IGoods | null>();
   const goodsList = useSelector(getGoodsSelector);
-  // console.log('goodsList', goodsList);
-  const findGood = (): IGoods => {
-    const result = goodsList.filter((goods) => id === goods.id);
+  console.log('goodsList', goodsList);
 
-    return result[0];
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      const result = goodsList.filter((goods) => id === goods.id);
+      const [GoodsData] = result;
+      setViewState(GoodsData);
+    }, 1000);
+  }, []);
 
-  const GoodsData = findGood();
-  console.log(GoodsData);
-  const { title, category, description } = GoodsData;
+  console.log(id);
+
+  const { title, category, description } = viewState;
 
   return (
     <div className={style.wrapper}>

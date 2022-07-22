@@ -19,7 +19,8 @@ const KebabMenuList: FC<IProps> = ({ id }) => {
       <li>
         <img src="icons/eye.svg" alt="" className={style.kebab_img} />
         <Link to={`/view/${id}`} style={{ textDecoration: 'none' }}>
-          <button type="button">Просмотреть</button>
+          {/* <button type="button">Просмотреть</button> */}
+          Просмотреть
         </Link>
       </li>
       <li>
