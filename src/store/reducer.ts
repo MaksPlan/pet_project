@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import IGoods from '../interfaces/IGoods';
 import { ActionType } from '../util/actionCreater';
-import { ActionGoodsCard, IGoodsState } from './interface';
+import { ActionGoodsCard, IGoodsState, TGoods } from './interface';
 
 const initialState = {
   goods: [],
@@ -12,8 +12,10 @@ export const reducerGlobal = (
   action: ActionGoodsCard
 ): IGoodsState => {
   switch (action.type) {
-    case ActionType.EDIT_CARD:
+    case ActionType.ADD_CARD:
       return { ...state, goods: action.payload };
+    case ActionType.EDIT_CARD:
+      return { ...state, goods: [...state.goods, action.payload] };
     case ActionType.VIEW_CARD:
       return state;
     case ActionType.DELETE_CARD:

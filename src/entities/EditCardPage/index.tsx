@@ -1,32 +1,56 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { FC, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import IGoods from '../../interfaces/IGoods';
-import { ActionType } from '../../util/actionCreater';
+import Button from '../../shared/Button';
+import { TGoods } from '../../store/interface';
+import { getGoodsSelector } from '../../store/selector';
+import { ActionType, editGoodsData } from '../../util/actionCreater';
+import GoodsPage from '../Goods/GoodsPage';
 import style from './editcardspage.module.scss';
 
 const EditCardPage = () => {
   const dispatch = useDispatch();
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement> // | ChangeEvent<HTMLSelectElement>
-  ): IGoods => {
-    const goodCard = {};
-    return goodCard;
-  };
+  const getGoodsList = useSelector(getGoodsSelector);
+  const [goodsTitle, setGoodsTitle] = useState('');
+  const [goodCategory, setGoodCategory] = useState();
+  const [telephone, setTelephone] = useState('');
+  const [description, setDescription] = useState('');
+  function saveGoodCard() {
+    const goodCard = {
+      id: getGoodsList.length + 1,
+      title: goodsTitle,
+      tel: telephone,
+      email: 'sfgdsg@mail.com',
+      description,
+      category: goodCategory,
+    };
+    return dispatch(editGoodsData(goodCard));
+  }
+
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
+        {/* <Button name="Сохранить" data={editGoodCard} /> */}
+        <button type="button" onClick={() => saveGoodCard()}>
+          <Link to="\" style={{ textDecoration: 'none' }}>
+            Сохранить
+          </Link>
+        </button>
+
         <div className={style.input_big}>
           <input
             type="text"
             className={style.input_big}
-            // лучше вынести в хэндлер перед return
-            // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {...}
-            // и передавать уже его в onChange
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => setGoodsTitle(e.target.value)}
           />
         </div>
         <div className={style.select}>
-          <select name="categories" id="" className={style.input_medium}>
+          <select
+            name="categories"
+            id=""
+            className={style.input_medium}
+            onCanPlay={(e) => console.log(e.target)}>
             <option value="tech">tech</option>
             <option value="jewelry">jewelry</option>
           </select>
@@ -35,22 +59,22 @@ const EditCardPage = () => {
         <div>
           <input
             type="tel"
-            value="+7 (___) ___-____"
+            placeholder="+7 (___) ___-____"
             data-mask="+7 (___) ___-____"
             className={style.input_medium}
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => setTelephone(e.target.value)}
           />
         </div>
         <div>
           <input
             type="text"
             className={style.input_big}
-            value="Введите текст (до 3000 символов)"
-            onChange={(e) => handleInputChange(e)}
+            placeholder="Введите текст (до 3000 символов)"
+            onChange={(e) => setDescription(e.target.value)}
           />
         </div>
         <div>
-          <input type="file" className={style.input_big} onChange={(e) => handleInputChange(e)} />
+          <input type="file" className={style.input_big} onChange={(e) => e} />
         </div>
       </div>
     </div>
