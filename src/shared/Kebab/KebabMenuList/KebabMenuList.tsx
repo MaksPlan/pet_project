@@ -1,6 +1,7 @@
 import React, { FC, useTransition } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteGoods } from '../../../api/axios-instance';
 import { ActionType, deleteCard } from '../../../util/actionCreater';
 import style from './kebabmenulist.module.scss';
 
@@ -12,6 +13,7 @@ const KebabMenuList: FC<IProps> = ({ id }) => {
   const dispatch = useDispatch();
   function removeCard() {
     dispatch(deleteCard(ActionType.DELETE_CARD, id));
+    // deleteGoods(); // туфта, в доках API написано, что он не удаялет, так что по старом через Redux
   }
 
   return (

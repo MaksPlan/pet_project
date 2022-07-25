@@ -2,6 +2,7 @@ import { Spin } from 'antd';
 import React, { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { changeGoodsData } from '../../api/axios-instance';
 import IGoods from '../../interfaces/IGoods';
 import Button from '../../shared/Button';
 import { TGoods } from '../../store/interface';
@@ -36,6 +37,7 @@ const EditCardPage = () => {
       description,
       category: goodCategory,
     };
+    changeGoodsData(goodCard);
     return dispatch(editGoodsData(goodCard));
   }
 

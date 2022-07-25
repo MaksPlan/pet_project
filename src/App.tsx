@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -11,6 +12,7 @@ import ViewCardPage from './entities/ViewCardPage';
 // import UserComponent from './entities/UsersPage/components/UserComponent';
 import PageLayout from './layouts/PageLayout';
 import { store } from './store/reducer';
+import './assets/scss/ant.scss';
 
 const App = () => {
   return (
